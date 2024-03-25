@@ -1,0 +1,25 @@
+[package]
+name = "idntkown"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+authors = ["antonta <work@antonta.net>"]
+description = "Identity key ownership."
+license = "MIT"
+repository = "https://git.sr.ht/~antonta/idntkown"
+keywords = ["cli", "command", "crypto", "cryptography", "utility"]
+categories = ["command-line-utilities", "cryptography", "filesystem"]
+
+[build-dependencies]
+capnpc = "~0.19"
+
+[dependencies]
+alkali = { version = "~0.3", features = ["hazmat"] }
+capnp = "~0.19"
+chrono = "~0.4"
+clap = { version = "~4.5", features = ["derive", "env"] }
+ntp = "~0.5"
+pgp = "~0.11"
+pstream = { version = "~0.1", features = ["io-filesystem"] }
+rpassword = "~7.3"
