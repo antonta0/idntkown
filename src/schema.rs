@@ -269,7 +269,7 @@ pub enum SignatureMode {
     Detached,
 }
 
-/// Key identifier, expressed as a `BLAKE2b` sum of the secret key bytes of
+/// Key identifier, expressed as a `BLAKE2b` sum of the public key bytes of
 /// 32 bytes in size.
 #[derive(Copy, Clone, Debug, Eq, Hash, PartialEq)]
 pub struct KeyId(pub [u8; Self::KEY_ID_SIZE]);

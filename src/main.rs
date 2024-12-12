@@ -7,25 +7,6 @@ use clap::{Parser, Subcommand, ValueEnum};
 
 use idntkown::schema::{ToCapnpBytes, TryFromCapnpBytes};
 
-// seeding with good random number generator - use pcg32
-//
-// identify information: identification - name or something like that,
-// free form. name::Anton persona::Anton Tereshchenkov: username::antonta someone::"Whoever that is"
-// - multiple personas, or usernames or names, yet single someone. If someone is unspecified, it
-// defaults either to a name or persona, or username. if multiple names, someone has to be
-// specified., if multiple personas, single name has to be present, if multiple usernames, at least a
-// single name or persona has to be present.
-//
-// someone -> name -> persona
-// someone -> name
-//
-// username as a separate field, not an identity information. as an extra for identity, can be
-// multiple usernames
-//
-// contact information - email. can be multiple
-//
-// subkeys are keys, signed by a primary key, no difference.
-
 /// 64 blocks of 2^12 bytes per block - should be sufficient to store
 /// approximately 500 or more entries of ed25519 keys.
 const IDNTKOWN_BLOCK_COUNT: u64 = 64;
